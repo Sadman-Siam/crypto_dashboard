@@ -6,7 +6,7 @@ import { fetchCryptoCurrencies } from "@/FrontendService/cryptoCurrencyService";
 import { useState } from "react";
 
 export default function Home() {
-  const [cryptocurrencies, setCryptocurrencies] = useState([null]);
+  const [cryptocurrencies, setCryptocurrencies] = useState(null);
 
   const handleCryptoCurrency = async () => {
     try {
