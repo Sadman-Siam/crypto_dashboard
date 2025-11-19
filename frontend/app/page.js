@@ -1,32 +1,39 @@
 "use client";
 
-import { ModeToggle } from "@/components/toggle";
 import { Button } from "@/components/ui/button";
 import { fetchCryptoCurrencies } from "@/FrontendService/cryptoCurrencyService";
 import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { Spinner } from "@/components/ui/spinner";
+import CryptoList from "@/components/cryptoList";
 
 export default function Home() {
-  const [cryptocurrencies, setCryptocurrencies] = useState(null);
+  const {
+    data: cryptoCurrenciesData,
+    isLoading,
+    isError,
+    refetch,
+  } = useQuery({
+    queryKey: ["cryptocurrencies"],
+    queryFn: fetchCryptoCurrencies,
+    enabled: true, // true -> fetch on site laod / false -> do not fetch on site load
+    staleTime: 1000 * 60 * 5, // 5 minutes cache
+  });
 
-  const handleCryptoCurrency = async () => {
-    try {
-      const data = await fetchCryptoCurrencies();
-      setCryptocurrencies(data);
-      console.log("Cryptocurrencies successfully fetched.");
-    } catch (error) {
-      console.error("Error fetching cryptocurrencies in page:", error);
-    }
-  };
   return (
     <div>
-      <h1>Welcome to Crypto Graph</h1>
-      <Button onClick={handleCryptoCurrency}>Fetch cryptocurrencies</Button>
-      {cryptocurrencies == null ? (
-        <div>No data</div>
-      ) : (
-        <div>
-          <h1>Data is there</h1>
+      {isLoading && (
+        <div className="flex justify-center">
+          <Button disabled variant="link" size="lg">
+            <Spinner />
+            Fetching Data....please wait
+          </Button>
         </div>
+      )}
+      {isError && <div>Error fetching data.</div>}
+
+      {cryptoCurrenciesData && (
+        <CryptoList crypto={cryptoCurrenciesData.data}></CryptoList>
       )}
     </div>
   );
