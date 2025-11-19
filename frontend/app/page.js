@@ -17,7 +17,7 @@ export default function Home() {
     queryKey: ["cryptocurrencies"],
     queryFn: fetchCryptoCurrencies,
     enabled: true, // true -> fetch on site laod / false -> do not fetch on site load
-    staleTime: 1000 * 60 * 5, // 5 minutes cache
+    staleTime: 1000 * 60 * 2, // 5 minutes cache
   });
 
   return (
