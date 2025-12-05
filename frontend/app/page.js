@@ -35,10 +35,10 @@ export default function Home() {
 
       {cryptoCurrenciesData && (
         <>
-          <CryptoList crypto={cryptoCurrenciesData.data}></CryptoList>
           <CryptoHighlights
             crypto={cryptoCurrenciesData.data}
           ></CryptoHighlights>
+          <CryptoList crypto={cryptoCurrenciesData.data}></CryptoList>
         </>
       )}
     </div>
