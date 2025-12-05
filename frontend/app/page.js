@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Spinner } from "@/components/ui/spinner";
 import CryptoList from "@/components/cryptoList";
+import CryptoHighlights from "@/components/cryptoHighlights";
 
 export default function Home() {
   const {
@@ -33,7 +34,12 @@ export default function Home() {
       {isError && <div>Error fetching data.</div>}
 
       {cryptoCurrenciesData && (
-        <CryptoList crypto={cryptoCurrenciesData.data}></CryptoList>
+        <>
+          <CryptoList crypto={cryptoCurrenciesData.data}></CryptoList>
+          <CryptoHighlights
+            crypto={cryptoCurrenciesData.data}
+          ></CryptoHighlights>
+        </>
       )}
     </div>
   );
