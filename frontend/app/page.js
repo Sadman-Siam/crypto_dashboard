@@ -7,8 +7,11 @@ import { useQuery } from "@tanstack/react-query";
 import { Spinner } from "@/components/ui/spinner";
 import CryptoList from "@/components/cryptoList";
 import CryptoHighlights from "@/components/cryptoHighlights";
+import { useSharedData } from "./providers/DataContext";
+import CryptoDetails from "@/components/cryptoetails";
 
 export default function Home() {
+  const { setSharedData } = useSharedData();
   const {
     data: cryptoCurrenciesData,
     isLoading,
@@ -20,6 +23,10 @@ export default function Home() {
     enabled: true, // true -> fetch on site laod / false -> do not fetch on site load
     staleTime: 1000 * 60 * 2, // 5 minutes cache
   });
+
+  if (cryptoCurrenciesData && !isLoading) {
+    setSharedData(cryptoCurrenciesData.data);
+  }
 
   return (
     <div>
@@ -35,6 +42,7 @@ export default function Home() {
 
       {cryptoCurrenciesData && (
         <>
+          <CryptoDetails crypto={cryptoCurrenciesData.data}></CryptoDetails>
           <CryptoHighlights
             crypto={cryptoCurrenciesData.data}
           ></CryptoHighlights>
