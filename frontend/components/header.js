@@ -28,22 +28,22 @@ export default function Header() {
   if (value) {
     setSelectedCrypto(value);
   }
-
+  //flex justify-between items-center px-4 py-2
   return (
     <header className="border-b-2">
-      <nav className="flex justify-between items-center px-4 py-2 ">
-        <div className="flex items-center space-x-2">
-          <SlGraph size={32} />
-          <h1 className="text-lg font-semibold">Crypto Graph</h1>
+      <nav className="flex justify-between items-center px-2 py-2">
+        <div className="flex items-center justify-center space-x-1 md:space-x-2">
+          <SlGraph size={20} />
+          <h1 className="text-sm font-semibold md:text-[18px]">Crypto Graph</h1>
         </div>
-        <div className="mr-24">
+        <div className="">
           <Popover open={open} onOpenChange={setOpen}>
             <PopoverTrigger asChild>
               <Button
                 variant="outline"
                 role="combobox"
                 aria-expanded={open}
-                className="w-[200px] justify-between"
+                className="w-[150px] justify-between text-[12px] md:w-[200px] md:text-[14px]"
               >
                 {value
                   ? sharedData.find((currency) => currency.name === value)

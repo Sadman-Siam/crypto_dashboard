@@ -36,21 +36,38 @@ export default function CryptoList({ crypto }) {
   }
   return (
     <div className={`mx-4`}>
-      <nav className={`flex justify-between items-center`}>
-        <h1 className={`font-semibold`}>Top 3 crypto by {`${sortby}`}</h1>
-        <div>
-          <Button variant="link" onClick={handleMarketCap}>
+      <nav
+        className={`flex flex-col justify-center items-start md:flex-row md:justify-between md:items-start md:mt-2`}
+      >
+        <h1 className={`font-semibold py-2 md:py-0`}>
+          Top 3 crypto by {`${sortby}`}
+        </h1>
+        <div className="space-x-2 space-y-2">
+          <Button
+            variant="link"
+            className=" border text-[12px]"
+            onClick={handleMarketCap}
+          >
             Market Cap
           </Button>
-          <Button variant="link" onClick={handleVolume}>
+          <Button
+            variant="link"
+            className=" border text-[12px]"
+            onClick={handleVolume}
+          >
             Volume (24h)
           </Button>
-          <Button variant="link" onClick={handleMarketPrice}>
+          <Button
+            variant="link"
+            className=" border text-[12px]"
+            s
+            onClick={handleMarketPrice}
+          >
             Market Price
           </Button>
         </div>
       </nav>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="flex flex-col space-y-2 md:grid md:grid-cols-3 md:gap-2 md:space-y-0">
         {crypto
           .sort((a, b) =>
             marketCap
@@ -63,11 +80,11 @@ export default function CryptoList({ crypto }) {
           .map((currency) => (
             <div
               key={currency.id}
-              className={`flex justify-between space-2 border rounded-2xl py-2 px-4 text-[16px] font-semibold`}
+              className={`flex flex-row justify-between space-2 border rounded-2xl py-2 px-4 text-[14px] font-semibold md:flex-col md:space-y-1 lg:text-[16px] lg:flex-row`}
             >
               <div>
                 {currency.name} {currency.symbol}
-                <div className={`text-[12px] mt-2`}>
+                <div className={`text-[12px] mt-2 md:space-y-1`}>
                   <p>Price: ${currency.quote.USD.price.toFixed(2)}</p>
                   <p>Market Cap: ${currency.quote.USD.market_cap.toFixed(2)}</p>
                   <p>

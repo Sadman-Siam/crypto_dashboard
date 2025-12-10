@@ -42,6 +42,10 @@ export default function Home() {
 
       {cryptoCurrenciesData && (
         <>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          ></meta>
           <CryptoDetails crypto={cryptoCurrenciesData.data}></CryptoDetails>
           <CryptoHighlights
             crypto={cryptoCurrenciesData.data}

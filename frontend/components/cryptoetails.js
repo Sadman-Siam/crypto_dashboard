@@ -13,9 +13,11 @@ export default function CryptoDetails(crypto) {
               <div key={currency.id} className={`mx-4 font-semibold`}>
                 {currency.name} {currency.symbol}
                 <div
-                  className={`flex flex-col justify-between items-start border-b-2 pb-2`}
+                  className={`flex justify-between items-start border-b-2 pb-2 md:flex-col md:space-y-2`}
                 >
-                  <div className={`text-[16px] mt-2 flex space-x-4 space-y-2`}>
+                  <div
+                    className={`flex flex-col text-[12px] md:flex-row md:space-x-4 md:text-[14px] lg:text-[16px]`}
+                  >
                     <p>
                       Price:{" "}
                       <span className="text-blue-600">
@@ -42,7 +44,9 @@ export default function CryptoDetails(crypto) {
                       %
                     </p>
                   </div>
-                  <div className="flex text-[16px] space-x-4">
+                  <div
+                    className={`flex flex-col text-[12px] md:flex-row md:space-x-4 md:text-[14px] lg:text-[16px]`}
+                  >
                     <Stat
                       name="1h Change"
                       value={
@@ -78,7 +82,7 @@ export default function CryptoDetails(crypto) {
 }
 function Stat({ name, value }) {
   return (
-    <div className={`flex flex-col`}>
+    <div className={`flex space-x-2 md:flex-col`}>
       <span>{name}</span>
       <span className={`${percentColor(value)}`}>{value}</span>
     </div>

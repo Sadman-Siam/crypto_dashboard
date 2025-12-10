@@ -16,6 +16,7 @@ function percentColor(value) {
 export default function CryptoList({ crypto }) {
   return (
     <div className="px-4">
+      <h1 className="font-semibold py-2">All Crypto List</h1>
       <Table>
         <TableCaption>List of Crypto Currencies</TableCaption>
         <TableHeader>
