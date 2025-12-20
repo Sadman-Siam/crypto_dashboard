@@ -1,7 +1,7 @@
 # Crypto Dashboard
 
 A real-time cryptocurrency tracking dashboard built with Next.js and Express.
-[View Live Demo](https://myapp.vercel.app)
+- [View Live Site](https://crypto-graph-dashboard.vercel.app)
 
 ## Features
 
@@ -11,9 +11,9 @@ A real-time cryptocurrency tracking dashboard built with Next.js and Express.
 - Dark/Light theme support
 - Responsive design
 
-##System Design
+## System Design
 
-[system design](images/Diagram2.png)
+![system design](images/Diagram2.png)
 
 ## Tech Stack
 
