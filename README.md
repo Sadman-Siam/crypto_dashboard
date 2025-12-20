@@ -6,7 +6,7 @@ config:
   layout: elk
   look: neo
 ---
-flowchart TB
+flowchart LR
  subgraph s1["**BACKEND**"]
         n1["Update Cache every 2 min"]
         D["Cache"]
