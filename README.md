@@ -1,9 +1,10 @@
-#Crypto Dashboard
+Simple System Design
 ```mermaid
 ---
 config:
-  theme: base
+  theme: redux-dark
   layout: elk
+  look: neo
 ---
 flowchart RL
  subgraph s1["**BACKEND**"]
