@@ -6,11 +6,13 @@ config:
   layout: elk
   look: neo
 ---
-flowchart RL
+flowchart TB
  subgraph s1["**BACKEND**"]
+        n1["Update Cache every 2 min"]
         D["Cache"]
         C{"fa:fa-server Server"}
   end
+    D --- n1
     A["fa:fa-desktop Desktop / fa:fa-mobile Mobile"] e1@--> B["Webpage"]
     B e2@--> A
     B e3@-- Request Data --> C
@@ -20,6 +22,7 @@ flowchart RL
     C e7@-- API Request for Data --> E["Coin Market API"]
     E e8@-- Returns JSON --> C
 
+    n1@{ icon: "aws:res-aws-iot-over-air-update", pos: "b"}
 
     e1@{ animate: true } 
     e2@{ animate: true } 
@@ -30,3 +33,5 @@ flowchart RL
     e7@{ animate: true } 
     e8@{ animate: true }
 ```
+
+
