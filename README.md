@@ -18,11 +18,11 @@ A real-time cryptocurrency tracking dashboard built with Next.js and Express.
 ## Tech Stack
 
 **Frontend:**
-- Next.js 16
-- React 19
+- Next.js 
+- React 
 - TanStack Query
 - Tailwind CSS
-- Radix UI components
+- ShadCN UI components
 
 **Backend:**
 - Node.js
