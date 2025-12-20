@@ -1,3 +1,2 @@
-Simple System Design
-![Simple System Design](images/Diagram1.png)
+<h1>Simple System Design</h1>
 ![Simple System Design](images/Diagram2.png)
