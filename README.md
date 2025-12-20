@@ -1,3 +1,3 @@
 Simple System Design
-(asset/Crypto Graph System Diagram TD.png)
-(asset/Crypto Graph System Diagram LR.png)
+![Simple System Design](asset/Crypto Graph System Diagram TD.png)
+![Simple System Design](asset/Crypto Graph System Diagram LR.png)
