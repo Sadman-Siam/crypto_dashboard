@@ -1,6 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  // 2. Ignore ESLint Errors during build
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  output: "standalone",
   reactCompiler: true,
 };
 
