@@ -6,7 +6,7 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - PORT: 5000
+      - PORT=5000
       - CMC_PRO_API_KEY=${CMC_PRO_API_KEY}
       - CMC_PRO_API_URL=${CMC_PRO_API_URL}
 
